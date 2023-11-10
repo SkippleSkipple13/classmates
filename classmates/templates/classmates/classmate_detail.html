@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classmate Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #0074D9;
+            color: white;
+            padding: 10px;
+            margin: 0;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .details-container {
+            width: 60%;
+            margin: 0 auto;
+            background-color: white;
+            border: 2px solid #0074D9;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .detail-label {
+            font-weight: bold;
+        }
+
+        a.edit-link {
+            display: block;
+            width: 120px;
+            background-color: #0074D9;
+            color: white;
+            padding: 10px;
+            margin: 20px auto;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Classmate Details</h1>
+
+    <div class="details-container">
+        <h2>Name: {{ object.firstname }} {{ object.lastname }}</h2>
+        <p class="detail-label">Age:</p>
+        <p>{{ object.age }}</p>
+        <p class="detail-label">Gender:</p>
+        <p>{{ object.gender }}</p>
+        <p class="detail-label">Address:</p>
+        <p>{{ object.address }}</p>
+        <!-- Add more details as needed -->
+    </div>
+
+    <a class="edit-link" href="{% url 'classmate_edit' object.id %}">Edit</a>
+</body>
+</html>
